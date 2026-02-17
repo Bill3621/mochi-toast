@@ -7,14 +7,14 @@
   </p>
   <br />
 
-  ![HTML5](https://img.shields.io/badge/vanilla-js-F7DF1E?style=flat-square&logo=javascript&logoColor=000)
-  ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-44cc11?style=flat-square)
-  ![Gzipped](https://img.shields.io/badge/gzip-~3kb-blue?style=flat-square)
-  ![License](https://img.shields.io/badge/license-MIT-purple?style=flat-square)
+![HTML5](https://img.shields.io/badge/vanilla-js-F7DF1E?style=flat-square&logo=javascript&logoColor=000)
+![Zero Dependencies](https://img.shields.io/badge/dependencies-0-44cc11?style=flat-square)
+![Gzipped](https://img.shields.io/badge/gzip-~3kb-blue?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-purple?style=flat-square)
 
   <br />
 
-  <img src="https://raw.githubusercontent.com/Bill3621/mochi/main/preview.gif" alt="mochi toast demo" width="420" />
+  <img src="https://raw.githubusercontent.com/Bill3621/mochi-toast/main/preview.gif" alt="mochi toast demo" width="420" />
 
   <br />
 </div>
@@ -64,13 +64,13 @@ your-project/
 
 ```html
 <script>
-  // Simple success toast
-  Toast.create({
-    type: "success",
-    title: "Changes Saved",
-    description: "All your changes have been saved successfully.",
-    autoDismiss: 4000,
-  });
+    // Simple success toast
+    Toast.create({
+        type: "success",
+        title: "Changes Saved",
+        description: "All your changes have been saved successfully.",
+        autoDismiss: 4000,
+    });
 </script>
 ```
 
@@ -80,32 +80,32 @@ your-project/
 
 Creates and shows a new toast. Returns a **toast API object**.
 
-| Option | Type | Default | Description |
-| -------------- | ---------- | ------- | ----------------------------------------------------- |
-| `type` | `string` | `"info"` | `"info"` · `"success"` · `"error"` · `"loading"` |
-| `title` | `string` | `""` | Header text |
-| `description` | `string` | `""` | Body paragraph text |
-| `theme` | `string` | `"light"` | `"light"` or `"dark"` |
-| `actionLabel` | `string` | `null` | Adds a CTA button with this label |
-| `onAction` | `function` | `null` | Callback when the action button is clicked — receives the toast API |
-| `richHTML` | `string` | `null` | Arbitrary HTML injected into the body |
-| `expandDelay` | `number` | `800` | ms before the body auto-expands |
-| `autoDismiss` | `number` | `0` | ms before auto-dismiss (0 = manual only) |
-| `swipeDismiss` | `boolean` | `true` | Allow swiping up to dismiss |
+| Option         | Type       | Default   | Description                                                         |
+| -------------- | ---------- | --------- | ------------------------------------------------------------------- |
+| `type`         | `string`   | `"info"`  | `"info"` · `"success"` · `"error"` · `"loading"`                    |
+| `title`        | `string`   | `""`      | Header text                                                         |
+| `description`  | `string`   | `""`      | Body paragraph text                                                 |
+| `theme`        | `string`   | `"light"` | `"light"` or `"dark"`                                               |
+| `actionLabel`  | `string`   | `null`    | Adds a CTA button with this label                                   |
+| `onAction`     | `function` | `null`    | Callback when the action button is clicked — receives the toast API |
+| `richHTML`     | `string`   | `null`    | Arbitrary HTML injected into the body                               |
+| `expandDelay`  | `number`   | `800`     | ms before the body auto-expands                                     |
+| `autoDismiss`  | `number`   | `0`       | ms before auto-dismiss (0 = manual only)                            |
+| `swipeDismiss` | `boolean`  | `true`    | Allow swiping up to dismiss                                         |
 
 ### Toast API Object
 
 The object returned by `Toast.create()`:
 
-| Method | Description |
-| ---------------------------------------- | ------------------------------------------------ |
-| `api.dismiss()` | Dismiss the toast with exit animation |
-| `api.expand()` | Expand the body section |
-| `api.collapse()` | Collapse the body back to the pill header |
-| `api.setTitle(text, color?)` | Update the header title |
-| `api.setIcon(svgHTML, animate?)` | Replace the icon — pass `true` to pop-animate |
-| `api.setBody(html)` | Replace the body content entirely |
-| `api.replaceBtn(label, bgColor?, color?)` | Update the action button (and disable it) |
+| Method                                    | Description                                   |
+| ----------------------------------------- | --------------------------------------------- |
+| `api.dismiss()`                           | Dismiss the toast with exit animation         |
+| `api.expand()`                            | Expand the body section                       |
+| `api.collapse()`                          | Collapse the body back to the pill header     |
+| `api.setTitle(text, color?)`              | Update the header title                       |
+| `api.setIcon(svgHTML, animate?)`          | Replace the icon — pass `true` to pop-animate |
+| `api.setBody(html)`                       | Replace the body content entirely             |
+| `api.replaceBtn(label, bgColor?, color?)` | Update the action button (and disable it)     |
 
 ### Built-in Icons
 
@@ -134,10 +134,10 @@ Toast.COLORS.dark.success; // "#4ADE80"
 
 ```js
 Toast.create({
-  type: "error",
-  title: "Something Went Wrong",
-  description: "We couldn't save your changes. Please try again.",
-  autoDismiss: 5000,
+    type: "error",
+    title: "Something Went Wrong",
+    description: "We couldn't save your changes. Please try again.",
+    autoDismiss: 5000,
 });
 ```
 
@@ -145,20 +145,20 @@ Toast.create({
 
 ```js
 Toast.create({
-  type: "info",
-  title: "File Uploaded",
-  description: "Share it with your team?",
-  actionLabel: "Share Now",
-  onAction: (api) => {
-    api.replaceBtn("Link Copied!", "#DCFCE7", "#16A34A");
+    type: "info",
+    title: "File Uploaded",
+    description: "Share it with your team?",
+    actionLabel: "Share Now",
+    onAction: (api) => {
+        api.replaceBtn("Link Copied!", "#DCFCE7", "#16A34A");
 
-    setTimeout(() => {
-      api.setTitle("Link Copied", "#16A34A");
-      api.setIcon(Toast.ICONS.success, true);
-      api.collapse();
-      setTimeout(() => api.dismiss(), 2500);
-    }, 700);
-  },
+        setTimeout(() => {
+            api.setTitle("Link Copied", "#16A34A");
+            api.setIcon(Toast.ICONS.success, true);
+            api.collapse();
+            setTimeout(() => api.dismiss(), 2500);
+        }, 700);
+    },
 });
 ```
 
@@ -166,9 +166,9 @@ Toast.create({
 
 ```js
 const t = Toast.create({
-  type: "loading",
-  title: "Saving...",
-  expandDelay: 999999, // don't auto-expand
+    type: "loading",
+    title: "Saving...",
+    expandDelay: 999999, // don't auto-expand
 });
 
 // Later, when the async work finishes:
@@ -181,20 +181,20 @@ setTimeout(() => t.dismiss(), 2000);
 
 ```js
 const t = Toast.create({
-  type: "loading",
-  title: "Booking Flight",
-  expandDelay: 999999,
+    type: "loading",
+    title: "Booking Flight",
+    expandDelay: 999999,
 });
 
 fetchBooking().then((html) => {
-  t.setTitle("Booking Confirmed", "#4ADE80");
-  t.setIcon(Toast.ICONS.successDark, true);
-  t.el.dataset.theme = "dark";
+    t.setTitle("Booking Confirmed", "#4ADE80");
+    t.setIcon(Toast.ICONS.successDark, true);
+    t.el.dataset.theme = "dark";
 
-  setTimeout(() => {
-    t.setBody(html);
-    t.expand();
-  }, 500);
+    setTimeout(() => {
+        t.setBody(html);
+        t.expand();
+    }, 500);
 });
 ```
 
@@ -202,11 +202,11 @@ fetchBooking().then((html) => {
 
 ```js
 Toast.create({
-  type: "success",
-  title: "Confirmed",
-  theme: "dark",
-  description: "Your reservation is locked in.",
-  autoDismiss: 4000,
+    type: "success",
+    title: "Confirmed",
+    theme: "dark",
+    description: "Your reservation is locked in.",
+    autoDismiss: 4000,
 });
 ```
 
@@ -214,11 +214,11 @@ Toast.create({
 
 ```js
 Toast.create({
-  type: "info",
-  title: "Important Notice",
-  description: "This toast can only be dismissed programmatically.",
-  swipeDismiss: false,
-  autoDismiss: 6000,
+    type: "info",
+    title: "Important Notice",
+    description: "This toast can only be dismissed programmatically.",
+    swipeDismiss: false,
+    autoDismiss: 6000,
 });
 ```
 
@@ -229,20 +229,20 @@ Override any CSS variable or class to match your design system:
 ```css
 /* Custom content width */
 .toast-content {
-  width: 420px;
+    width: 420px;
 }
 
 /* Custom background */
 .toast-bg {
-  background: #1a1a2e;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    background: #1a1a2e;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 /* Custom button style */
 .toast-btn.style-info {
-  background: #6366f1;
-  color: #fff;
-  border-radius: 999px;
+    background: #6366f1;
+    color: #fff;
+    border-radius: 999px;
 }
 ```
 
