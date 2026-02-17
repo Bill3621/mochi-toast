@@ -388,9 +388,11 @@ const Toast = (() => {
     api.el.classList.add("exit");
 
     requestAnimationFrame(() => {
-      wrapper.style.transition =
-        "max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
-      wrapper.style.maxHeight = "0px";
+      requestAnimationFrame(() => {
+        wrapper.style.transition =
+          "max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
+        wrapper.style.maxHeight = "0px";
+      });
     });
 
     setTimeout(() => wrapper.remove(), 500);
