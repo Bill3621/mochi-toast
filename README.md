@@ -14,7 +14,7 @@
 
   <br />
 
-  <img src="https://raw.githubusercontent.com/Bill3621/mochi-toast/main/preview.gif" alt="mochi toast demo" width="420" />
+  <img src="./preview.gif" alt="mochi toast demo" width="420" />
 
   <br />
 </div>
