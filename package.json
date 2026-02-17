@@ -1,6 +1,6 @@
 {
     "name": "mochi-toast",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Soft, squishy, expandable toast notifications for vanilla JS",
     "keywords": [
         "toast",
@@ -18,5 +18,9 @@
     },
     "license": "MIT",
     "author": "bill3621",
-    "main": "toast.js"
+    "main": "toast.js",
+    "files": [
+        "toast.js",
+        "toast.css"
+    ]
 }
