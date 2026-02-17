@@ -9,7 +9,7 @@
 
 ![HTML5](https://img.shields.io/badge/vanilla-js-F7DF1E?style=flat-square&logo=javascript&logoColor=000)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-44cc11?style=flat-square)
-![Gzipped](https://img.shields.io/badge/gzip-~3kb-blue?style=flat-square)
+![Gzipped](https://img.shields.io/bundlephobia/minzip/mochi-toast?style=flat-square&label=gzip&color=blue)
 ![License](https://img.shields.io/badge/license-MIT-purple?style=flat-square)
 
   <br />
