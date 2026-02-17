@@ -41,6 +41,13 @@
 <script src="https://unpkg.com/mochi-toast/toast.js"></script>
 ```
 
+or
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mochi-toast/toast.css"/>
+<script src="https://cdn.jsdelivr.net/npm/mochi-toast/toast.js"></script>
+```
+
 ### Manual
 
 Copy `toast.css` and `toast.js` into your project:
