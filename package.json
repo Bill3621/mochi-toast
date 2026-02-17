@@ -17,6 +17,6 @@
         "url": "git+https://github.com/Bill3621/mochi-toast.git"
     },
     "license": "MIT",
-    "author": "Bill",
+    "author": "bill3621",
     "main": "toast.js"
 }
