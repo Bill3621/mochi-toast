@@ -1,0 +1,22 @@
+{
+    "name": "mochi-toast",
+    "version": "1.0.0",
+    "description": "Soft, squishy, expandable toast notifications for vanilla JS",
+    "keywords": [
+        "toast",
+        "notifications",
+        "vanilla-js",
+        "ui"
+    ],
+    "homepage": "https://github.com/Bill3621/mochi-toast#readme",
+    "bugs": {
+        "url": "https://github.com/Bill3621/mochi-toast/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Bill3621/mochi-toast.git"
+    },
+    "license": "MIT",
+    "author": "Bill",
+    "main": "toast.js"
+}
