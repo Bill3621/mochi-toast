@@ -9,7 +9,7 @@
 
 ![HTML5](https://img.shields.io/badge/vanilla-js-F7DF1E?style=flat-square&logo=javascript&logoColor=000)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-44cc11?style=flat-square)
-![Gzipped](https://img.shields.io/bundlephobia/minzip/mochi-toast?style=flat-square&label=gzip&color=blue)
+![Gzipped](https://img.shields.io/badge/gzip-~4kb-blue?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-purple?style=flat-square)
 
   <br />
@@ -30,7 +30,7 @@
 - **State transitions** — morph a loading spinner into a success card without remounting
 - **Rich content** — embed any HTML inside the expandable body
 - **Light & dark themes** — per-toast theming via a single option
-- **Tiny footprint** — ~3 KB gzipped, zero dependencies
+- **Tiny footprint** — ~4 KB gzipped, zero dependencies
 
 ## 📦 Installation
 
