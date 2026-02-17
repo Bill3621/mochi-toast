@@ -1,6 +1,6 @@
 {
     "name": "mochi-toast",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Soft, squishy, expandable toast notifications for vanilla JS",
     "keywords": [
         "toast",
