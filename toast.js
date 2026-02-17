@@ -379,23 +379,57 @@ const Toast = (() => {
 
     if (api._cleanupSwipe) api._cleanupSwipe();
 
-    const wrapper = api.wrapper;
-    const wrapperHeight = wrapper.offsetHeight;
-    wrapper.style.maxHeight = wrapperHeight + "px";
-    wrapper.style.overflow = "clip";
+    const { el, wrapper, bg, bodyWrap, header, _expanded } = api;
 
-    api.el.classList.remove("show");
-    api.el.classList.add("exit");
+    const runExit = () => {
+      el.classList.remove("show", "expanded", "collapsing");
+      el.style.transition = "opacity 0.22s ease, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)";
+      el.style.transform = "translateY(-8px) scale(0.96)";
+      el.style.opacity = "0";
+      el.style.pointerEvents = "none";
 
-    requestAnimationFrame(() => {
+      const height = wrapper.offsetHeight;
       requestAnimationFrame(() => {
-        wrapper.style.transition =
-          "max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
-        wrapper.style.maxHeight = "0px";
+        wrapper.style.height = height + "px";
+        wrapper.style.overflow = "hidden";
+        requestAnimationFrame(() => {
+          wrapper.style.transition = "height 0.32s cubic-bezier(0.4, 0, 0.2, 1)";
+          wrapper.style.height = "0px";
+        });
       });
-    });
 
-    setTimeout(() => wrapper.remove(), 500);
+      setTimeout(() => wrapper.remove(), 380);
+    };
+
+    if(_expanded) {
+      const { el, bg, bodyWrap, header } = api;
+      const FADE_MS = api._collapseDelay;
+
+      const curH = bodyWrap.offsetHeight;
+      bodyWrap.style.height = curH + "px";
+      el.classList.remove("expanded");
+      el.classList.add("collapsing");
+      api._expanded = false;
+
+      setTimeout(() => {
+        bodyWrap.style.height = "0";
+
+        requestAnimationFrame(() => {
+          const w = header.offsetWidth;
+          bg.style.width = w + "px";
+           bg.style.height = "48px";
+           bg.style.borderRadius = "50px";
+        });
+
+        setTimeout(() => {
+          el.classList.remove("collapsing");
+        }, 550);
+      }, FADE_MS);
+      
+      setTimeout(runExit, api._collapseDelay + 600);
+    } else {
+      runExit();
+    }
   }
 
   return { create, expand, collapse, dismiss, ICONS, COLORS };
